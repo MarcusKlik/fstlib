@@ -38,6 +38,7 @@ add_subdirectory(ext/arrow)
 # add the fst library components
 add_subdirectory(lib/fst)
 add_subdirectory(lib/fsttable)
+add_subdirectory(lib/fstarrow)
 
 # add unit tests
 add_subdirectory(test/testfst)

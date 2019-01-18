@@ -4,12 +4,12 @@ set(libfsttable_SRCS
 	fsttable.cpp
 )
 
-# declare fst library
+# declare fsttable library
 add_library(libfsttable STATIC
     ${libfsttable_SRCS}
 )
 
-# add zstd and lz4 compression libraries
+# add fst library as dependency
 target_link_libraries(libfsttable
 	libfst
 )

@@ -22,8 +22,8 @@ using namespace std;
 class FactorTest : public ::testing::Test
 {
 protected:
-	FilePath testDataDir;
-	std::string filePath;
+  FilePath testDataDir;
+  std::string filePath;
   IColumnFactory* columnFactory;
 
   IFstTable* tableReader;
@@ -56,7 +56,6 @@ TEST_F(FactorTest, NaLevels)
 	fstTable.InitTable(1, nrOfRows);
 
 	vector<std::string> colNames {"Factor"};
-
 	fstTable.SetColumnNames(colNames);
 
 	// Add factor column

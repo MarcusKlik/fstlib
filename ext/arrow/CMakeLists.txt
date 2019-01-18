@@ -20,8 +20,7 @@ set(libarrow_SRCS
 
 add_definitions(-DARROW_EXPORTING)
 
-
-# declare LZ4 library
+# declare arrow library
 add_library(libarrow STATIC
     ${libarrow_SRCS}
 )

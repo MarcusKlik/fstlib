@@ -168,7 +168,7 @@ class FactorVector : public DestructableObject
 {
 	int* data = nullptr;
 	StringColumn* levels;
-  unsigned long long length;
+	unsigned long long length;
 
 public:
 	FactorVector(unsigned long long length)
@@ -401,7 +401,7 @@ public:
 
 class StringArray : public IStringArray
 {
-	std::vector<std::string>* strVec = nullptr;
+  std::vector<std::string>* strVec = nullptr;
   StringEncoding string_encoding;
   bool external = true;
 
@@ -754,12 +754,12 @@ public:
     (*colAnnotations)[colNr] = annotation;
 	}
 
-  void SetDoubleColumn(IDoubleColumn * doubleColumn, int colNr)
-  {
-    DoubleVectorAdapter* doubleAdapter = (DoubleVectorAdapter*) doubleColumn;
-    (*columns)[colNr] = doubleAdapter->DataPtr();
-    (*columnTypes)[colNr] = FstColumnType::DOUBLE_64;
-  }
+	void SetDoubleColumn(IDoubleColumn * doubleColumn, int colNr)
+	{
+		DoubleVectorAdapter* doubleAdapter = (DoubleVectorAdapter*) doubleColumn;
+		(*columns)[colNr] = doubleAdapter->DataPtr();
+		(*columnTypes)[colNr] = FstColumnType::DOUBLE_64;
+	}
 
 	void SetFactorColumn(IFactorColumn* factorColumn, int colNr)
 	{
@@ -776,8 +776,8 @@ public:
 	{
 		columnAttribute = (*columnAttributes)[colNr];
 		annotation += (*colAnnotations)[colNr];
-    scale = (*colScales)[colNr];
-    hasAnnotation = false;
+	    scale = (*colScales)[colNr];
+	    hasAnnotation = false;
 
 		return (*columnTypes)[colNr];
 	}
