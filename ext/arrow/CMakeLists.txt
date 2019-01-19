@@ -2,6 +2,7 @@
 # define code files
 set(libarrow_SRCS
     arrow/array.cc
+	arrow/builder.cc
     arrow/buffer.cc
     arrow/compare.cc
     arrow/memory_pool.cc
@@ -9,11 +10,14 @@ set(libarrow_SRCS
 	arrow/record_batch.cc
     arrow/status.cc
     arrow/table.cc
+	arrow/table_builder.cc
     arrow/tensor.cc
     arrow/type.cc
     arrow/visitor.cc
 	arrow/util/bit-util.cc
+	arrow/util/cpu-info.cc
 	arrow/util/decimal.cc
+	arrow/util/hash.cc
 	arrow/util/key_value_metadata.cc
 	arrow/util/logging.cc
 )
@@ -28,4 +32,5 @@ add_library(libarrow STATIC
 # exported include directories
 target_include_directories(libarrow PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/../boost
 )

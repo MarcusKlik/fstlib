@@ -16,6 +16,7 @@ set(testfst_SRCS
 	scaletest.cpp
 	SetThreads.cpp
 	character.cpp
+	fstarrowtable.cpp
 )
 
 # create test executable
@@ -24,5 +25,6 @@ add_executable(testfst
 )
 
 # include_directories(src ${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-target_link_libraries(testfst libfst libfsttable gtest gtest_main)
+target_link_libraries(testfst libarrow libfst libfsttable libfstarrow gtest gtest_main)
+
 add_test(testfst testfst)

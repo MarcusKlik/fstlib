@@ -70,7 +70,6 @@ Status BytesToBits(const std::vector<uint8_t>& bytes, MemoryPool* pool,
 
 namespace internal {
 
-/*
 int64_t CountSetBits(const uint8_t* data, int64_t bit_offset, int64_t length) {
   constexpr int64_t pop_len = sizeof(uint64_t) * 8;
 
@@ -111,7 +110,7 @@ int64_t CountSetBits(const uint8_t* data, int64_t bit_offset, int64_t length) {
 
   return count;
 }
-*/
+
 
 template <bool invert_bits, bool restore_trailing_bits>
 void TransferBitmap(const uint8_t* data, int64_t offset, int64_t length,
