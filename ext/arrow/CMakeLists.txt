@@ -25,9 +25,9 @@ set(libarrow_SRCS
 add_definitions(-DARROW_EXPORTING)
 
 # define DISABLE_SIMD environmental variable to disable SIMD
-if(DEFINED ENV{DISABLE_SIMD})
-	message(STATUS "Arrow library build with SIMD disabled")
-	add_compile_definitions(ARROW_DISABLE_SIMD)
+if(MSVC)
+	message(STATUS "Use -march=native CXX flag")
+	set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
 endif()
 
 # declare arrow library
