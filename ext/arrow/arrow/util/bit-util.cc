@@ -19,7 +19,7 @@
 #ifdef _MSC_VER
 #include <intrin.h>
 #define __builtin_popcount __popcnt
-#include <nmmintrin.h>
+//#include <nmmintrin.h>
 #define __builtin_popcountll _mm_popcnt_u64
 #endif
 

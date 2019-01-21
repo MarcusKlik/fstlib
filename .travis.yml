@@ -12,7 +12,6 @@ os:
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pip install --user cpp-coveralls; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" && $CXX == "clang++" ]]; then export LD_LIBRARY_PATH=/usr/local/clang-5.0.0/lib; fi
-  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then export DISABLE_SIMD=1; fi
 
 
 before_script:
