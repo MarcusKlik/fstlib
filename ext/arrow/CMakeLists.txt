@@ -24,6 +24,12 @@ set(libarrow_SRCS
 
 add_definitions(-DARROW_EXPORTING)
 
+# define DISABLE_SIMD environmental variable to disable SIMD
+if(DEFINED ENV{DISABLE_SIMD})
+	message(STATUS "Arrow library build with SIMD disabled")
+	add_compile_definitions(ARROW_DISABLE_SIMD)
+endif()
+
 # declare arrow library
 add_library(libarrow STATIC
     ${libarrow_SRCS}
